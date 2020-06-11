@@ -74,7 +74,6 @@ func SearchServer(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// check order_field
 	orderField := r.FormValue("order_field")
 	if orderField == "" {
 		orderField = "Name"
@@ -221,7 +220,6 @@ func TestFindUsers(t *testing.T) {
 		}
 		response, err := client.FindUsers(tCase.Request)
 
-		// we just need to cover 100% - so need in real testing
 		if response == nil || err != nil {
 			t.Errorf("[%d] expected response, got error", i)
 		}
